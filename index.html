@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controlo de Estoque</title>
+    <!-- Chama o ficheiro CSS externo -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Registar Categoria</h2>
+        <label for="nomeCategoria">NOME DA CATEGORIA</label>
+        <input type="text" id="nomeCategoria" placeholder="Ex: Placas de Vídeo" autocomplete="off">
+        <button onclick="salvarCategoria()">Adicionar ao Sistema</button>
+
+        <ul id="listaCategorias">
+            <!-- O JavaScript vai injetar os itens da base de dados aqui -->
+        </ul>
+    </div>
+
+    <!-- Chama o ficheiro JavaScript externo (sempre no final do body) -->
+    <script src="/js/script.js"></script>
+</body>
+</html>
