@@ -1,11 +1,11 @@
 class Categoria:
-    def __init__(self, id_categoria, nome):
-        self.id_categoria = id_categoria
+    def __init__(self, id, nome):
+        self.id = id
         self.nome = nome
 
 class Produto:
-    def __init__(self, id_produto, nome, preco, categoria_id):
-        self.id_produto = id_produto
+    def __init__(self, id, nome, preco, id_categoria):
+        self.id = id
         self.nome = nome
         self.preco = preco
-        self.categoria_id = categoria_id
+        self.id_categoria = id_categoria

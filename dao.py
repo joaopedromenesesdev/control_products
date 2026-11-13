@@ -33,7 +33,7 @@ class CategoriaDAO:
                 resultados = cursor.fetchall()
                 # Transforma cada linha do banco em um objeto da classe Categoria (POO)
                 for linha in resultados:
-                    cat = Categoria(id_categoria=linha[0], nome=linha[1])
+                    cat = Categoria(id=linha[0], nome=linha[1])
                     categorias.append(cat)
             except Exception as e:
                 print(f"Erro ao listar categorias: {e}")
@@ -51,7 +51,7 @@ class ProdutoDAO:
             try:
                 cursor = conn.cursor()
                 sql = "INSERT INTO produtos (nome, preco, id_categoria) VALUES (%s, %s, %s)"
-                valores = (produto.nome, produto.preco, produto.categoria_id)
+                valores = (produto.nome, produto.preco, produto.id_categoria)
                 cursor.execute(sql, valores)
                 conn.commit()
                 return True
@@ -73,7 +73,7 @@ class ProdutoDAO:
                 cursor.execute("SELECT id, nome, preco, id_categoria FROM produtos")
                 resultados = cursor.fetchall()
                 for linha in resultados:
-                    prod = Produto(id_produto=linha[0], nome=linha[1], preco=linha[2], categoria_id=linha[3])
+                    prod = Produto(id=linha[0], nome=linha[1], preco=linha[2], id_categoria=linha[3])
                     produtos.append(prod)
             except Exception as e:
                 print(f"Erro ao listar produtos: {e}")
